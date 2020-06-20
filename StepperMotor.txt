@@ -1,0 +1,16 @@
+#include <Stepper.h>
+int spr= 50;
+Stepper moto(spr, 2,3,11,12);
+
+void setup()
+{
+  moto.setSpeed(30);
+}
+
+void loop()
+{
+
+  moto.step(50);
+  delay(1000);
+  
+}

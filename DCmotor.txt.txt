@@ -1,0 +1,14 @@
+void setup()
+{
+digitalWrite(7,1);
+digitalWrite(6,0);
+delay(3000);
+digitalWrite(9,1);
+digitalWrite(8,0);
+delay(3000);
+}
+
+void loop()
+{
+  
+}

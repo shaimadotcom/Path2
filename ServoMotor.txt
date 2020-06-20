@@ -1,0 +1,24 @@
+#include <Servo.h>
+
+
+Servo servo_9;
+Servo servo_8;
+void setup()
+{
+  servo_9.attach(9);
+  servo_9.write(170);
+  delay(3000);
+  servo_9.write(20);
+  delay(3000);
+  
+  servo_8.attach(8);
+  servo_8.write(170);
+  delay(3000);
+  servo_8.write(20);
+  delay(3000);
+  
+
+}
+
+void loop()
+{
