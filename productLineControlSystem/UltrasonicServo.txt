@@ -1,0 +1,50 @@
+#include <Servo.h>
+const int pingPin = 4;
+const int servoPin = 2;
+Servo servoMotor;
+void setup()
+{
+  Serial.begin(9600);
+  servoMotor.attach(servoPin);
+}
+
+void loop()
+{
+  long duration, cm;
+  
+  pinMode(pingPin, OUTPUT);
+  digitalWrite(pingPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pingPin, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(pingPin, LOW);
+  
+  pinMode(pingPin, INPUT);
+  duration = pulseIn(pingPin, HIGH);
+
+
+  cm = microsecondsToCentimeters(duration);
+  if(cm <=25){
+  	servoMotor.write(0);
+  }
+  else if(cm <= 50){
+  	servoMotor.write(30);
+  }
+  else if(cm <= 100){
+  	servoMotor.write(60);
+  }
+  else if(cm <= 150){
+  	servoMotor.write(90);
+  }
+  
+  else if(cm <= 200){
+  	servoMotor.write(120);
+  }
+  else if(cm <= 250){
+  	servoMotor.write(150);
+  }
+  else if(cm > 250){
+  	servoMotor.write(180);
+  }
+  delay(250);
+}
